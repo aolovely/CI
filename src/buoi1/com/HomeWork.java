@@ -148,6 +148,10 @@ public class HomeWork {
 				}
 				for(int k = 0; k < 3; k++) {
 					if(box[k][0] == ((player[0] +10 - 1)%10) && box[k][1] == player[1]) {
+						for(int h = 0; h < 3; h++) {
+							if(box[h][0] == ((box[k][0] + 10 - 1)%10) && box[h][1] == box[k][1])
+								continue lable3 ;									
+						}
 						for(int h = 0; h < 5; h++) {
 							if(wall[h][0] == ((box[k][0] + 10 - 1)%10) && wall[h][1] == box[k][1])
 								continue lable3 ;									
@@ -172,6 +176,10 @@ public class HomeWork {
 				}
 				for(int k = 0; k < 3; k++) {
 					if(box[k][0] == ((player[0] + 1)%10) && box[k][1] == player[1]) {
+						for(int h = 0; h < 3; h++) {
+							if(box[h][0] == ((box[k][0] + 1)%10) && box[h][1] == box[k][1])
+								continue lable3 ;									
+						}
 						for(int h = 0; h < 5; h++) {
 							if(wall[h][0] == ((box[k][0] + 1)%10) && wall[h][1] == box[k][1])
 								continue lable3 ;									
@@ -196,6 +204,10 @@ public class HomeWork {
 				}
 				for(int k = 0; k < 3; k++) {
 					if(box[k][1] == ((player[1] + 10 - 1)%10) && box[k][0] == player[0]) {
+						for(int h = 0; h < 3; h++) {
+							if(box[h][1] == ((box[k][1] + 10 - 1)%10) && box[h][0] == box[k][0])
+								continue lable3 ;									
+						}
 						for(int h = 0; h < 5; h++) {
 							if(wall[h][1] == ((box[k][1] + 10 - 1)%10) && wall[h][0] == box[k][0])
 								continue lable3 ;									
@@ -220,6 +232,10 @@ public class HomeWork {
 				}
 				for(int k = 0; k < 3; k++) {
 					if(box[k][1] == ((player[1] + 1)%10) && box[k][0] == player[0]) {
+						for(int h = 0; h < 3; h++) {
+							if(box[h][1] == ((box[k][1] + 1)%10) && box[h][0] == box[k][0])
+								continue lable3 ;									
+						}
 						for(int h = 0; h < 5; h++) {
 							if(wall[h][1] == ((box[k][1] + 1)%10) && wall[h][0] == box[k][0])
 								continue lable3 ;									
