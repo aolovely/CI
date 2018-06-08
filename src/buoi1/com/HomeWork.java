@@ -51,12 +51,13 @@ public class HomeWork {
 					box[i][j] = random.nextInt(10);
 				}
 			for(int k = 0; k < 3; k++) {
-				if(box[k][0] == player[0] && box[k][1] == player[1])
-					break lable1;
-				else
-					for(int h = 0; h < 3; h++) {
-						if(box[k][0] == gift[h][0] && box[k][1] == gift[h][0]) continue lable1;
-					}
+				if((box[k][0] == player[0] && box[k][1] == player[1]) ||
+					(box[k][0] == enemy[0] && box[k][1] == enemy[1]) ||
+					(box[k][0] == enemyx[0] && box[k][1] == enemyx[1]) ||
+					(box[k][0] == enemyy[0] && box[k][1] == enemyy[1])) continue lable1;				
+				for(int h = 0; h < 3; h++) {
+					if(box[k][0] == gift[h][0] && box[k][1] == gift[h][0]) continue lable1;
+				}
 			}
 			break;
 		}
@@ -240,15 +241,29 @@ public class HomeWork {
 				continue;
 			}
 			
-			
+			//enemyx va vao tuong
 			for(int k = 0; k < 5; k++) {
 				if(wall[k][0] == ((enemyx[0] + 10 + addx)%10) && wall[k][1] == enemyx[1]) {
 					addx = -addx;
 					break;
 				}
 			}
+			for(int k = 0; k < 3; k++) {
+				if(box[k][0] == ((enemyx[0] + 10 + addx)%10) && box[k][1] == enemyx[1]) {
+					addx = -addx;
+					break;
+				}
+			}
+			//enemyy va vao wall
 			for(int k = 0; k < 5; k++) {
 				if(wall[k][1] == ((enemyy[1] + 10 + addy)%10) && wall[k][0] == enemyy[0]) {
+					addy = -addy;
+					break;
+				}
+			}
+			//enemyy va vao box
+			for(int k = 0; k < 3; k++) {
+				if(box[k][1] == ((enemyy[1] + 10 + addy)%10) && box[k][0] == enemyy[0]) {
 					addy = -addy;
 					break;
 				}
