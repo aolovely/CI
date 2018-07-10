@@ -4,7 +4,7 @@ import java.util.Random;
 public class Player extends GameObject {
 
     public PlayMove playMove;
-    public PlayerAttack playerAttack;
+
     private Random random = new Random();
 
     public Player() {
@@ -16,7 +16,7 @@ public class Player extends GameObject {
                 new Vector2D(20, 8)
         );
         this.playMove = new PlayMove();
-        this.playerAttack = new PlayerShoot();
+        this.attributes.add(new PlayerShoot());
     }
 
     @Override
@@ -24,7 +24,7 @@ public class Player extends GameObject {
         super.run();
         this.playMove.run(this);
         ((PolygonRenderer) this.renderer).angle = this.playMove.angle;
-        this.playerAttack.run(this);
+        //this.playerAttack.run(this);
     }
 
 

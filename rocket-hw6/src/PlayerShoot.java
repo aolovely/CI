@@ -1,4 +1,4 @@
-public class PlayerShoot implements PlayerAttack {
+public class PlayerShoot implements GameObjectAttributes<Player> {
 
     private FrameCounter frameCounter;
 
