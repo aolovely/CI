@@ -23,10 +23,9 @@ public class PlayerShoot implements GameObjectAttributes<Player> {
             this.tripShoot.run(gameObject);
             this.frameCounter.reset();
         } else if (this.frameCounter.run() && KeyboardInput.instance.isSpace) {
-            BulletPlayer bulletPlayer = new BulletPlayer();
+            BulletPlayer bulletPlayer = GameObjectManager.instance.recycle(BulletPlayer.class);
             bulletPlayer.position.set(gameObject.position);
             bulletPlayer.velocity.set(gameObject.velocity.copy().multiply(1.5f));
-            GameObjectManager.instance.add(bulletPlayer);
             this.frameCounter.reset();
         }
     }

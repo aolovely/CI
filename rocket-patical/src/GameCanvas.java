@@ -17,7 +17,7 @@ public class GameCanvas extends JPanel {
     BufferedImage backBuffered;
     Graphics graphics;
 
-    public Player player = new Player();
+    public Player player;
 
     public GameCanvas() {
 
@@ -47,9 +47,8 @@ public class GameCanvas extends JPanel {
     }
 
     private void setupPlayer() {
-        Player player = new Player();
+        Player player = GameObjectManager.instance.recycle(Player.class);
         player.position.set(100, 200);
-        GameObjectManager.instance.add(player);
     }
 
     @Override
@@ -66,12 +65,4 @@ public class GameCanvas extends JPanel {
         GameObjectManager.instance.runAll();
     }
 
-    private void runEnemy() {
-//        base.Vector2D velocity = this.player.position
-//                .subtract(this.enemy.position)
-//                .normalize()
-//                .multiply(1.5f);
-//        this.enemy.velocity.set(velocity);
-//        this.enemy.run();
-    }
 }

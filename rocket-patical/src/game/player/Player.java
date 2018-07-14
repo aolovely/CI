@@ -1,6 +1,7 @@
 package game.player;
 
 import base.GameObject;
+import base.GameObjectManager;
 import base.Vector2D;
 import game.effect.CreatParticle;
 import game.effect.EffectShield;
@@ -56,6 +57,7 @@ public class Player extends GameObject implements PhysicBody {
         if (gameObject instanceof Enemy) {
             this.isAlive = false;
             this.creatParticle.run(this);
+            GameObjectManager.instance.recycle(Player.class);
         }
     }
 }

@@ -31,6 +31,7 @@ public class BulletPlayer extends GameObject implements PhysicBody {
         this.position.addUp(this.velocity);
         this.boxCollider.position.set(this.position.x - 4, this.position.y - 4);
         this.runHitObject.run(this);
+        GameObjectManager.instance.objectExitDisplay(this);
     }
 
     @Override
